@@ -8,8 +8,10 @@ class AppRouter extends Component {
   render() {
     return (
       <Fragment>
-        <Route path="/" exact Component={Home}/>
-        <Route path="/articles" Component={Articles}/>
+        <Route path="/" exact component={Home}/>
+        <Route path="/articles" component={Articles}/>
+        {/* <Route path="/login" component={Login}/>
+        <Route path="/signup" component={Signup}/> */}
       </Fragment>
     );
   }

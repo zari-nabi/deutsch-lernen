@@ -3,6 +3,8 @@ import {Route } from 'react-router-dom';
 
 import Home from '../../pages/Home';
 import Articles from '../../pages/Articles';
+import Login from '../../pages/Login';
+import Signup from '../../pages/Signup';
 
 class AppRouter extends Component {
   render() {
@@ -10,8 +12,8 @@ class AppRouter extends Component {
       <Fragment>
         <Route path="/" exact component={Home}/>
         <Route path="/articles" component={Articles}/>
-        {/* <Route path="/login" component={Login}/>
-        <Route path="/signup" component={Signup}/> */}
+        <Route path="/login" component={Login}/>
+        <Route path="/signup" component={Signup}/>
       </Fragment>
     );
   }

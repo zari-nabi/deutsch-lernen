@@ -18,7 +18,7 @@ const Navbar = () => (
                         <Link className="nav-link" to="/">Home</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="create-article.html">Articles</Link>
+                        <Link className="nav-link" to="/articles">Articles</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/">Hey Garry!
@@ -30,10 +30,10 @@ const Navbar = () => (
                         </div>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="login.html">Login</Link>
+                        <Link className="nav-link" to="/login">Login</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="register.html">Signup</Link>
+                        <Link className="nav-link" to="/signup">Signup</Link>
                     </li>
                 </ul>
             </div>

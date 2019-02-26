@@ -4,10 +4,11 @@ import { BrowserRouter, withRouter } from 'react-router-dom';
 
 import App from './App';
 
+const AppWithRouter = withRouter(App);
 
 ReactDOM.render(
     <BrowserRouter>
-        <App />
+        <AppWithRouter />
     </BrowserRouter>
 
     , document.getElementById('root'));

@@ -6,17 +6,17 @@ import Articles from './ArticlesForm';
 
 class ArticlesContainer extends React.Component{
     componentWillMount(){
-       // this.props.getArticles();
+        this.props.getArticles();
     }
     render(){
         return(
-            <Articles/>
+            <Articles articles={this.props.articles}/>
         )
     };
 };
 
 const mapStateToProps = (state) => ({
-
+    articles: state.articles
 })
 
 const mapDispatchToProps = (dispatch) => ({

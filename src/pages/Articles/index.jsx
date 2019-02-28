@@ -1,22 +1,28 @@
 import React, { Fragment } from 'react';
+import {connect} from 'react-redux';
 
-import Banner from '../../components/Banner';
-import Article from '../../components/Article';
+import {getArticles} from '../../store/actions/articles';
+import Articles from './ArticlesForm';
 
-const Articles = () => (
-    <Fragment>
-        <Banner/>
-        <main class="main-content bg-gray">
-            <div class="row">
-                <div class="col-12 col-lg-6 offset-lg-3">
-                    <Article />
-                    <Article />
-                    <Article />
-                </div>
-            </div>
-        </main>
-    </Fragment>
+class ArticlesContainer extends React.Component{
+    componentWillMount(){
+       // this.props.getArticles();
+    }
+    render(){
+        return(
+            <Articles/>
+        )
+    };
+};
 
-)
+const mapStateToProps = (state) => ({
 
-export default Articles;
+})
+
+const mapDispatchToProps = (dispatch) => ({
+    getArticles : () => {
+        dispatch(getArticles())
+    }
+});
+ 
+export default connect(mapStateToProps,mapDispatchToProps)(ArticlesContainer) ;

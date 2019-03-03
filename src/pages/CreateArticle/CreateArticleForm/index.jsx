@@ -1,7 +1,9 @@
 import React, { Fragment } from 'react';
+import {reduxForm,Field} from 'redux-form';
+
 import Banner from '../../../components/Banner';
 
-const CreateArticle = ({handleSubmit}) => (
+const CreateArticle = ({handleSubmit,submitting,invalid}) => (
     <Fragment>
         <Banner />
         <main className="main-content">
@@ -29,7 +31,7 @@ const CreateArticle = ({handleSubmit}) => (
                                     <textarea className="form-control form-control-lg" rows={4} placeholder="Content" name="message" defaultValue={""} />
                                 </div>
                                 <div className="text-center">
-                                    <button className="btn btn-lg btn-primary" type="submit">Create Article</button>
+                                    <button className="btn btn-lg btn-primary" type="submit" disabled={submitting || invalid}>Create Article</button>
                                 </div>
                             </form>
                         </div>
@@ -40,4 +42,8 @@ const CreateArticle = ({handleSubmit}) => (
     </Fragment>
 )
 
-export default CreateArticle;
+export default reduxForm({
+    form:'create-article',
+ //   validate:validateCreateArticle
+})(CreateArticle)
+

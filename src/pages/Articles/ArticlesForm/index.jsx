@@ -10,7 +10,7 @@ const Articles = ({ articles,handlePageChange,pageCount }) => (
         <main class="main-content bg-gray">
             <div class="row">
                 <div class="col-12 col-lg-6 offset-lg-3">
-                    {articles.map(article =>
+                    {articles && articles.map(article =>
                         <div key={article.id}>
                             <Article article={article} />
                             <hr />

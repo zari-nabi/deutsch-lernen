@@ -15,14 +15,9 @@ export const getArticles = () => async (dispatch, getState) => {
 
 }
 
-export const createArticle = (values) => async (dispatch) => {
+export const createArticle = (data) => async (dispatch) => {
     try {
-        const response = await axios.post(`${config.apiUrl}/articles`, {
-            title: values.title,
-            content: values.content,
-            category_id: values.category,
-        
-        })
+        const response = await axios.post(`${config.apiUrl}/articles`, data)
 
         dispatch({
             type:POST_ARTICLES,

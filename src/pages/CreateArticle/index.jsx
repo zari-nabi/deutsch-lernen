@@ -5,9 +5,8 @@ import { createArticle } from '../../store/actions/articles';
 import CreateArticle from './CreateArticleForm';
 
 class CreateArtContainer extends React.Component {
-    handleSubmit = async (event,values) => {
-        event.preventDefault();
-        await this.props.createArticle(values);
+    handleSubmit = async (data) => {
+        await this.props.createArticle(data);
     }
     render() {
         return (
@@ -18,8 +17,8 @@ class CreateArtContainer extends React.Component {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    createArticle: (values) => {
-        dispatch(createArticle(values))
+    createArticle: (data) => {
+        dispatch(createArticle(data))
     }
 })
 

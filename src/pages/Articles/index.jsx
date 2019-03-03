@@ -8,9 +8,21 @@ class ArticlesContainer extends React.Component{
     componentWillMount(){
         this.props.getArticles();
     }
+
+    getPageCount =(total,perPage) => {
+        return Math.ceil(total / perPage);
+    }
+    handlePageChange = (page) =>{
+        console.log(page);
+    }
     render(){
+        console.log(this.props.articles)
         return(
-            <Articles articles={this.props.articles}/>
+            <Articles
+             articles={this.props.articles}
+             pageCount = {this.getPageCount(this.props.articles.length,3)}
+             handlePageChange={this.handlePageChange}
+             />
         )
     };
 };
